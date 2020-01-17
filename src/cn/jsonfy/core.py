@@ -98,7 +98,7 @@ class SetDesc(BaseDesc):
 class DateTimeDesc(BaseDesc):
     def __init__(self, key, type=None, **kwargs):
         self.type = datetime
-        # 默认格式 defalut format
+        # the_default_format
         kwargs.setdefault('format', '%Y-%m-%d %H:%M:%S')
         super().__init__(key, self.type, **kwargs)
 
