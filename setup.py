@@ -3,7 +3,7 @@
 # Name:      setup
 # Author:    liangbaikai
 # Date:      2020/1/17
-# Desc:      there is a python file description
+# Desc:      there is a setup.py file
 # ------------------------------------------------------------------
 from setuptools import setup, find_packages
 
