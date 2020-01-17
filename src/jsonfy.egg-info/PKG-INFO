@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: jsonfy
-Version: 0.1.2
+Version: 0.2.0
 Summary: Jsonfy: Lightweight two-way binding of JSON and object without third-party dependency
 Home-page: https://github.com/1144388620lq/jsonfy
 Author: liangbaikai

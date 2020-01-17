@@ -12,7 +12,9 @@ setup(
     version="0.2.0",
     keywords=["pip", "json", "jsonfy", "obj"],
     description="Jsonfy: Lightweight two-way binding of JSON and object without third-party dependency",
-    long_description="Jsonfy: Lightweight two-way binding of JSON and object without third-party dependency, suppoert nesting,complex obj",
+    long_description="Jsonfy: Lightweight two-way binding of JSON and object without third-party dependency, suppoert nesting,complex obj"
+                     "[Jsonfy: 一款轻量级的无第三方依赖的json和对象的双向绑定的工具，支持复杂类型，嵌套类型，自定义某个字段是否序列化等,欢迎使用]",
+
     license="MIT Licence",
 
     url="https://github.com/1144388620lq/jsonfy",
