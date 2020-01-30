@@ -2,9 +2,12 @@ setup.py
 src/cn/__init__.py
 src/cn/examples/__init__.py
 src/cn/examples/examples.py
+src/cn/examples/test2.py
 src/cn/jsonfy/__init__.py
 src/cn/jsonfy/core.py
 src/jsonfy.egg-info/PKG-INFO
 src/jsonfy.egg-info/SOURCES.txt
 src/jsonfy.egg-info/dependency_links.txt
 src/jsonfy.egg-info/top_level.txt
+src/test/__init__.py
+src/test/test_core.py

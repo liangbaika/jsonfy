@@ -6,6 +6,7 @@
 ```
 import time
 from datetime import datetime
+from cn.jsonfy.core import DateTimeDesc, BaseJsonModel, DictDesc
 
 class Foo(BaseJsonModel):
     infos1 = DictDesc("infos1")

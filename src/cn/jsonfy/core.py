@@ -30,9 +30,12 @@ class BaseDesc:
         instance.__dict__.pop(self.key)
 
     def __set__(self, instance, value):
-        # just check type
-        if not isinstance(value, self.type):
-            raise AttributeError('require a  %s' % (self.type.__name__,))
+        # just check type  and null value is included
+        if not isinstance(value, self.type) and value is not None:
+            raise TypeError(
+                'occured some error, attribute<%s=%s> require a %s type,'
+                'please confirm a suitable type you gived' % (
+                    self.key, value, self.type.__name__))
 
 
 class IntDesc(BaseDesc):
@@ -42,7 +45,7 @@ class IntDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = int(value)
+        instance.__dict__[self.key] = int(value) if value else None
         super().__set__(instance, value)
 
 
@@ -52,7 +55,7 @@ class StrDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = str(value)
+        instance.__dict__[self.key] = str(value) if value else None
         super().__set__(instance, value)
 
 
@@ -62,7 +65,7 @@ class BoolDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = bool(value)
+        instance.__dict__[self.key] = bool(value) if value else None
         super().__set__(instance, value)
 
 
@@ -81,7 +84,7 @@ class FloatDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = float(value)
+        instance.__dict__[self.key] = float(value) if value else None
         super().__set__(instance, value)
 
 
@@ -91,7 +94,7 @@ class SetDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = set(value)
+        instance.__dict__[self.key] = set(value) if value else None
         super().__set__(instance, value)
 
 
@@ -103,7 +106,7 @@ class DateTimeDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = value
+        instance.__dict__[self.key] = value if value else None
         super().__set__(instance, value)
 
 
@@ -113,7 +116,7 @@ class ListDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = list(value)
+        instance.__dict__[self.key] = list(value) if value else None
         super().__set__(instance, value)
 
 
@@ -123,7 +126,7 @@ class DictDesc(BaseDesc):
         super().__init__(key, self.type, **kwargs)
 
     def __set__(self, instance, value):
-        instance.__dict__[self.key] = dict(value)
+        instance.__dict__[self.key] = dict(value) if value else None
         super().__set__(instance, value)
 
 
